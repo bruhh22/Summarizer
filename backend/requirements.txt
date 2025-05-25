@@ -4,6 +4,7 @@ Flask-Cors==3.0.10
 python-dotenv==1.0.0
 
 # YouTube Audio Handling
+yt-dlp>=2024.3.10
 pytube==15.0.0
 ffmpeg-python==0.2.0
 
