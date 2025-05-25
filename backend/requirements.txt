@@ -1,0 +1,24 @@
+# Core Dependencies
+Flask==2.3.2
+Flask-Cors==3.0.10
+python-dotenv==1.0.0
+
+# YouTube Audio Handling
+pytube==15.0.0
+ffmpeg-python==0.2.0
+
+# Transcription
+whisper==1.1.10
+torch==2.0.1  # Required for whisper
+
+# Summarization
+openai==0.27.8
+tiktoken==0.4.0  # For token counting
+
+# Production Dependencies
+gunicorn==20.1.0  # Production WSGI server
+python-logging-loki==0.3.1  # Optional for centralized logging
+
+# System Dependencies (must be installed separately)
+# ffmpeg (required for whisper)
+# libavcodec-extra (on Linux)
