@@ -9,7 +9,7 @@ from utils.summarize import summarize_text , truncate_text
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, resources={r"/summarize": {"origins": ["http://localhost:8000", "https://summarizer-swart-rho.vercel.app/"]}})  # Production CORS
+CORS(app, resources={r"/summarize": {"origins": ["http://localhost:8000", "https://summarizer-swart-rho.vercel.app/", "https://summarizer-git-master-bruhh22s-projects.vercel.app"]}})  # Production CORS
 
 # Configure logging for production
 logging.basicConfig(
