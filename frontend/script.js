@@ -14,7 +14,7 @@ document.getElementById("linkForm").addEventListener("submit", async function (e
   loading.classList.remove("hidden");
 
   try {
-    const response = await fetch("https://backend-461001.el.r.appspot.com", {
+    const response = await fetch("https://backend-461001.el.r.appspot.com/summarize", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
