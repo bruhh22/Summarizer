@@ -1,0 +1,14 @@
+runtime: python311
+
+entrypoint: gunicorn -b :$PORT app:app
+
+env_variables:
+  MAX_VIDEO_DURATION: "1200"
+  WHISPER_MODEL: "base"
+  TEMP_AUDIO_DIR: "./temp_audio"
+  DEBUG: "0"
+  LOG_LEVEL: "INFO"
+
+handlers:
+- url: /.*
+  script: auto
