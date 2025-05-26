@@ -8,15 +8,16 @@ from utils.transcribe import transcribe_audio
 from utils.summarize import summarize_text , truncate_text
 
 # Initialize Flask app
+print("Starting app.py")
 app = Flask(__name__)
-CORS(app, resources={r"/summarize": {"origins": ["http://localhost:8000", "https://summarizer-swart-rho.vercel.app", "https://summarizer-git-master-bruhh22s-projects.vercel.app"]}})  # Production CORS
+CORS(app, resources={r"/summarize": {"origins": ["http://localhost:8000", "https://summarizer-swart-rho.vercel.app", "https://summarizer-git-master-bruhh22s-projects.vercel.app", "https://summarizer-git-master-bruhh22s-projects.vercel.app/"]}})  # Production CORS
 
 # Configure logging for production
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('summary_app.log'),
+        logging.FileHandler('/tmp/summary_app.log'),
         logging.StreamHandler()
     ]
 )
@@ -29,7 +30,7 @@ if not os.getenv("GEMINI_API_KEY"):
     raise ValueError("Missing Gemini API key")
 
 # Configuration
-UPLOAD_FOLDER = 'temp_audio'
+UPLOAD_FOLDER = '/tmp/temp_audio'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB limit for audio files

@@ -3,12 +3,12 @@ runtime: python311
 entrypoint: gunicorn -b :$PORT app:app
 
 env_variables:
+  GEMINI_API_KEY: AIzaSyBcYcp-XgyumgLppPJMeMW4WDLqOixD6vY
+  SECRET_KEY: 825e5826614a2ea1953973c3184995b8b6971b9d01bbcd11fccc7d7db8c9299b
   MAX_VIDEO_DURATION: "1200"
   WHISPER_MODEL: "base"
-  TEMP_AUDIO_DIR: "./temp_audio"
+  TEMP_AUDIO_DIR: "/tmp/temp_audio"
   DEBUG: "0"
   LOG_LEVEL: "INFO"
 
-handlers:
-- url: /.*
-  script: auto
+  
